@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do App</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <div class="header-content">
+        <div class="logo-title">
+          <div class="logo">TD</div>
+          <h1>My To-Do List</h1>
+        </div>
+        <button id="theme-toggle" aria-label="Toggle theme">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="task-input">
+          <input type="text" id="new-task" placeholder="Add a new task...">
+          <button id="add-task-btn">
+            <i class="fas fa-plus"></i> Add
+          </button>
+        </div>
+        <div id="edit-form" class="edit-form hidden">
+          <input type="text" id="edit-task-input">
+          <div class="edit-buttons">
+            <button id="save-edit-btn" class="save-btn">
+              <i class="fas fa-check"></i>
+            </button>
+            <button id="cancel-edit-btn" class="cancel-btn">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+        <div class="tabs">
+          <button class="tab active" data-filter="all">All (<span id="all-count">0</span>)</button>
+          <button class="tab" data-filter="pending">Pending (<span id="pending-count">0</span>)</button>
+          <button class="tab" data-filter="completed">Completed (<span id="completed-count">0</span>)</button>
+        </div>
+        <div id="task-list" class="task-list">
+          <p id="empty-state" class="empty-state">No tasks yet. Add one above!</p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p id="task-summary">0 pending, 0 completed</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
